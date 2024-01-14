@@ -51,9 +51,9 @@
     "dist:linux:rpm:arm64": "electron-builder --arm64 -l rpm",
     "dist:linux:rpm:arm": "electron-builder --armv7l -l rpm",
     "dist:linux:targz": "electron-builder --x64 --arm64 --armv7l -l tar.gz",
-    "dist:linux:x64": "electron-builder --x64 -l AppImage deb pacman rpm snap tar.gz",
-    "dist:linux:arm64": "electron-builder --arm64 -l AppImage deb pacman rpm tar.gz",
-    "dist:linux:arm": "electron-builder --armv7l -l AppImage deb pacman rpm snap tar.gz",
+    "dist:linux:x64": "electron-builder --x64 -l deb pacman",
+    "dist:linux:arm64": "electron-builder --arm64 -l deb pacman",
+    "dist:linux:arm": "electron-builder --armv7l -l deb pacman",
     "release": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -80,9 +80,7 @@
       },
       "target": [
         "deb",
-        "pacman",
-        "rpm",
-        "tar.gz"
+        "pacman"
       ],
       "publish": {
         "provider": "github",
@@ -93,12 +91,6 @@
       "fpm": [
         "--rpm-rpmbuild-define=_build_id_links none"
       ]
-    },
-    "nsis": {
-      "differentialPackage": false
-    },
-    "dmg": {
-      "writeUpdateInfo": false
     }
   }
 }
