@@ -14,14 +14,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/julian-alarcon/prospect-mail"
+    "url": "git+ssh://github.com/atahk/prospect-mail"
   },
   "bugs": {
-    "url": "https://github.com/julian-alarcon/prospect-mail/issues"
+    "url": "https://github.com/atahk/prospect-mail/issues"
   },
   "author": {
     "name": "Julian Alarcon",
-    "email": "alarconj@gmail.com",
     "url": "https://github.com/julian-alarcon/"
   },
   "license": "MIT",
@@ -51,12 +50,7 @@
     "dist:linux:rpm:x64": "electron-builder --x64 -l rpm",
     "dist:linux:rpm:arm64": "electron-builder --arm64 -l rpm",
     "dist:linux:rpm:arm": "electron-builder --armv7l -l rpm",
-    "dist:linux:snap": "electron-builder --x64 --armv7l -l snap",
-    "dist:linux:snap:x64": "electron-builder --x64 -l snap",
-    "dist:linux:snap:armv7l": "electron-builder --armv7l -l snap",
     "dist:linux:targz": "electron-builder --x64 --arm64 --armv7l -l tar.gz",
-    "dist:mac": "electron-builder --mac",
-    "dist:windows": "electron-builder --windows --x64",
     "dist:linux:x64": "electron-builder --x64 -l AppImage deb pacman rpm snap tar.gz",
     "dist:linux:arm64": "electron-builder --arm64 -l AppImage deb pacman rpm tar.gz",
     "dist:linux:arm": "electron-builder --armv7l -l AppImage deb pacman rpm snap tar.gz",
@@ -85,11 +79,9 @@
         "StartupWMClass": "prospect-mail"
       },
       "target": [
-        "AppImage",
         "deb",
         "pacman",
         "rpm",
-        "snap",
         "tar.gz"
       ],
       "publish": {
@@ -101,46 +93,6 @@
       "fpm": [
         "--rpm-rpmbuild-define=_build_id_links none"
       ]
-    },
-    "snap": {
-      "summary": "Prospect Mail",
-      "confinement": "strict",
-      "grade": "stable",
-      "base": "core22",
-      "plugs": [
-        "default",
-        "cups",
-        "mount-observe",
-        "removable-media",
-        "screen-inhibit-control",
-        "upower-observe"
-      ],
-      "publish": [
-        {
-          "provider": "snapStore",
-          "channels": "beta"
-        }
-      ],
-      "allowNativeWayland": true
-    },
-    "mac": {
-      "category": "public.app-category.productivity",
-      "icon": "build/icon.icns",
-      "type": "distribution",
-      "publish": {
-        "provider": "github",
-        "releaseType": "draft"
-      }
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "msi"
-      ],
-      "publish": {
-        "provider": "github",
-        "releaseType": "draft"
-      }
     },
     "nsis": {
       "differentialPackage": false
