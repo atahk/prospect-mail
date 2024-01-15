@@ -102,7 +102,7 @@ class TrayController {
     } else {
       iconPath = value
         ? "../../assets/outlook_linux_unread.png"
-        : "../../assets/outlook_linux_black.png";
+        : "../../assets/outlook_linux_empty.png";
       return nativeImage.createFromPath(path.join(__dirname, iconPath));
     }
   }
