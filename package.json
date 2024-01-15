@@ -64,7 +64,7 @@
     "electron-settings": "^4.0.2"
   },
   "devDependencies": {
-    "electron": "^28.0.0",
+    "electron": "^28.1.3",
     "electron-builder": "^24.9.1"
   },
   "build": {
@@ -77,6 +77,8 @@
       "desktop": {
         "Name": "Prospect Mail",
         "Comment": "Unofficial desktop client for Microsoft Outlook",
+        "GenericName": "Mail Client",
+        "MimeType": "message/rfc822;text/calendar;text/vcard;text/x-vcard;x-scheme-handler/mailto;x-scheme-handler/webcal;x-scheme-handler/webcals;",
         "StartupWMClass": "prospect-mail"
       },
       "target": [
